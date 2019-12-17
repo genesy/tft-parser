@@ -1,3 +1,5 @@
+import Item from '../models/ItemModel';
+
 const _effectsMap = {
   "CritChance": "3abb8549",
   "DodgeChance": "c4b5579c",
