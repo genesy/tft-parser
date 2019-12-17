@@ -7,10 +7,7 @@ const latestDataUrl = 'http://raw.communitydragon.org/latest/cdragon/tft/en_us.j
 const pbeDataUrl = 'https://raw.communitydragon.org/pbe/cdragon/tft/en_us.json';
 const fakeUrl = 'https://raw.communitydragon.org/pbe/cdragon/tft/en_us.jsons'
 
-const downloadPromises = [];
-const getData = async() => {
-  return await axios.get(latestDataUrl);
-}
+const getData = async() => await axios.get(latestDataUrl);
 
 (async () => {
   const { data } = await getData();
@@ -36,18 +33,3 @@ const getData = async() => {
 
   console.log(newItems[0])
 })();
-
-// .then(({ data }) => {
-//   const { items, sets }: any = data;
-//   const newItems = items.map((item, index) => {
-//     return parseItem(item, index, () => {
-//       const iconUrl = 'http://raw.communitydragon.org/latest/game' + item.icon.replace('.dds', '.png');
-//       delete item.desc;
-//       downloadPromises.push(download(iconUrl));
-//     })
-//   })
-// }).catch(err => console.log(err))
-
-
-
-// console.log(newItems);

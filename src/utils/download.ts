@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const getFileName = str => str.split(/(\\|\/)/g).pop();
 
-export default async function download (url,) {
+export default async(url) => {
   const writer = fs.createWriteStream(`./assets/${getFileName(url)}`)
   console.log(url)
   try {
