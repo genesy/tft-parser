@@ -89,6 +89,8 @@ const getVersion = async() => await axios.get(versionUrl)
     }
   };
 
-  saveToJson({ filePath: './test.json', object: itemsToJson });
+  const filePath = `./data/${version}.json`;
+  saveToJson({ filePath, object: itemsToJson });
+  console.log('saved to', filePath);
 })();
 
